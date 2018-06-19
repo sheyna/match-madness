@@ -1,0 +1,322 @@
+[
+  {
+    "id": "1-1",
+    "name": "Mechanic",
+    "group": "Cinder",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "Goldenrod"
+  },
+  {
+    "id": "1-2",
+    "name": "Cyborg",
+    "group": "Cinder",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "Goldenrod"
+  },
+  {
+    "id": "1-3",
+    "name": "Gloves",
+    "group": "Cinder",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "Goldenrod"
+  },
+  {
+    "id": "1-14",
+    "name": "Foot",
+    "group": "Cinder",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "Goldenrod"
+  },
+  {
+    "id": "2-1",
+    "name": "Negotiator",
+    "group": "Kai",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "#c41342"
+  },
+  {
+    "id": "2-2",
+    "name": "Emporer",
+    "group": "Kai",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "#c41342"
+  },
+  {
+    "id": "2-3",
+    "name": "Appeaser",
+    "group": "Kai",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "#c41342"
+  },
+  {
+    "id": "2-4",
+    "name": "Teen Idol",
+    "group": "Kai",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "#c41342"
+  },
+  {
+    "id": "3-1",
+    "name": "Pilot",
+    "group": "Scarlet",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "OrangeRed"
+  },
+  {
+    "id": "3-2",
+    "name": "Hoodie",
+    "group": "Scarlet",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "OrangeRed"
+  },
+  {
+    "id": "3-3",
+    "name": "Gun",
+    "group": "Scarlet",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "OrangeRed"
+  },
+  {
+    "id": "3-4",
+    "name": "Red Hair",
+    "group": "Scarlet",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "OrangeRed"
+  },
+  {
+    "id": "4-1",
+    "name": "Street Fighter",
+    "group": "Wolf",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "Silver"
+  },
+  {
+    "id": "4-2",
+    "name": "Teeth",
+    "group": "Wolf",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "Silver"
+  },
+  {
+    "id": "4-3",
+    "name": "Tomatoes",
+    "group": "Wolf",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "Silver"
+  },
+  {
+    "id": "4-4",
+    "name": "Tattoo",
+    "group": "Wolf",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "Silver"
+  },
+  {
+    "id": "5-1",
+    "name": "",
+    "group": "Cress",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "MistyRose"
+  },
+  {
+    "id": "5-2",
+    "name": "Port Screen",
+    "group": "Cress",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "MistyRose"
+  },
+  {
+    "id": "5-3",
+    "name": "Satellite",
+    "group": "Cress",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "MistyRose"
+  },
+  {
+    "id": "5-4",
+    "name": "Long Hair",
+    "group": "Cress",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "MistyRose"
+  },
+  {
+    "id": "6-1",
+    "name": "Pilot",
+    "group": "Thorne",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "Navy"
+  },
+  {
+    "id": "6-2",
+    "name": "Rampion",
+    "group": "Thorne",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "Navy"
+  },
+  {
+    "id": "6-3",
+    "name": "Fun",
+    "group": "Thorne",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "Navy"
+  },
+  {
+    "id": "6-4",
+    "name": "Grin",
+    "group": "Thorne",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "Navy"
+  },
+  {
+    "id": "7-1",
+    "name": "Scar",
+    "group": "Winter",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "Black"
+  },
+  {
+    "id": "7-2",
+    "name": "Princess",
+    "group": "Winter",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "Black"
+  },
+  {
+    "id": "7-3",
+    "name": "Madness",
+    "group": "Winter",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "Black"
+  },
+  {
+    "id": "7-4",
+    "name": "Beauty",
+    "group": "Winter",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "Black"
+  },
+  {
+    "id": "8-1",
+    "name": "Protector",
+    "group": "Jacin",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "Indigo"
+  },
+  {
+    "id": "8-2",
+    "name": "Guard",
+    "group": "Jacin",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "Indigo"
+  },
+  {
+    "id": "8-3",
+    "name": "Loyalties",
+    "group": "Jacin",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "Indigo"
+  },
+  {
+    "id": "8-4",
+    "name": "Uniform",
+    "group": "Jacin",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "Indigo"
+  },
+  {
+    "id": "9-1",
+    "name": "Sidekick",
+    "group": "Iko",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "DarkTurquoise"
+  },
+  {
+    "id": "9-2",
+    "name": "Android",
+    "group": "Iko",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "DarkTurquoise"
+  },
+  {
+    "id": "9-3",
+    "name": "Synthetic Tissue",
+    "group": "Iko",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "DarkTurquoise"
+  },
+  {
+    "id": "9-4",
+    "name": "Blue Braided Hair",
+    "group": "Iko",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "DarkTurquoise"
+  },
+  {
+    "id": "10-1",
+    "name": "Lunar Gift",
+    "group": "Lavana",
+    "subGroup": "Power",
+    "img": "imgAddress",
+    "color": "DarkTurquoise"
+  },
+  {
+    "id": "10-2",
+    "name": "Queen",
+    "group": "Lavana",
+    "subGroup": "Tool",
+    "img": "imgAddress",
+    "color": "DarkTurquoise"
+  },
+  {
+    "id": "10-3",
+    "name": "Beauty",
+    "group": "Lavana",
+    "subGroup": "Weakness",
+    "img": "imgAddress",
+    "color": "DarkTurquoise"
+  },
+  {
+    "id": "10-4",
+    "name": "Control",
+    "group": "Lavana",
+    "subGroup": "Trait",
+    "img": "imgAddress",
+    "color": "DarkTurquoise"
+  }
+]
