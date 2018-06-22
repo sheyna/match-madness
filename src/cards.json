@@ -101,7 +101,7 @@
     "group": "Wolf",
     "subGroup": "Power",
     "img": "imgAddress",
-    "color": "Silver"
+    "color": "Gray"
   },
   {
     "id": "4-2",
@@ -109,7 +109,7 @@
     "group": "Wolf",
     "subGroup": "Tool",
     "img": "imgAddress",
-    "color": "Silver"
+    "color": "Gray"
   },
   {
     "id": "4-3",
@@ -117,54 +117,48 @@
     "group": "Wolf",
     "subGroup": "Weakness",
     "img": "imgAddress",
-    "color": "Silver"
+    "color": "Gray"
   },
   {
     "id": "4-4",
     "name": "Tattoo",
     "group": "Wolf",
     "subGroup": "Trait",
-    "img": "imgAddress",
-    "color": "Silver"
+    "color": "Gray"
   },
   {
     "id": "5-1",
-    "name": "",
+    "name": "Hacker",
     "group": "Cress",
     "subGroup": "Power",
-    "img": "imgAddress",
-    "color": "MistyRose"
+    "color": "LightCoral"
   },
   {
     "id": "5-2",
     "name": "Port Screen",
     "group": "Cress",
     "subGroup": "Tool",
-    "img": "imgAddress",
-    "color": "MistyRose"
+    "color": "LightCoral"
   },
   {
     "id": "5-3",
     "name": "Satellite",
     "group": "Cress",
     "subGroup": "Weakness",
-    "img": "imgAddress",
-    "color": "MistyRose"
+    "color": "LightCoral"
   },
   {
     "id": "5-4",
     "name": "Long Hair",
     "group": "Cress",
     "subGroup": "Trait",
-    "img": "imgAddress",
-    "color": "MistyRose"
+    "color": "LightCoral"
   },
   {
     "id": "6-1",
     "name": "Pilot",
     "group": "Thorne",
     "subGroup": "Power",
-    "img": "imgAddress",
     "color": "Navy"
   },
   {
@@ -172,7 +166,6 @@
     "name": "Rampion",
     "group": "Thorne",
     "subGroup": "Tool",
-    "img": "imgAddress",
     "color": "Navy"
   },
   {
@@ -180,7 +173,6 @@
     "name": "Fun",
     "group": "Thorne",
     "subGroup": "Weakness",
-    "img": "imgAddress",
     "color": "Navy"
   },
   {
@@ -188,7 +180,6 @@
     "name": "Grin",
     "group": "Thorne",
     "subGroup": "Trait",
-    "img": "imgAddress",
     "color": "Navy"
   },
   {
@@ -196,7 +187,6 @@
     "name": "Scar",
     "group": "Winter",
     "subGroup": "Power",
-    "img": "imgAddress",
     "color": "Black"
   },
   {
@@ -204,7 +194,6 @@
     "name": "Princess",
     "group": "Winter",
     "subGroup": "Tool",
-    "img": "imgAddress",
     "color": "Black"
   },
   {
@@ -212,7 +201,6 @@
     "name": "Madness",
     "group": "Winter",
     "subGroup": "Weakness",
-    "img": "imgAddress",
     "color": "Black"
   },
   {
@@ -220,7 +208,6 @@
     "name": "Beauty",
     "group": "Winter",
     "subGroup": "Trait",
-    "img": "imgAddress",
     "color": "Black"
   },
   {
@@ -228,7 +215,6 @@
     "name": "Protector",
     "group": "Jacin",
     "subGroup": "Power",
-    "img": "imgAddress",
     "color": "Indigo"
   },
   {
@@ -236,7 +222,6 @@
     "name": "Guard",
     "group": "Jacin",
     "subGroup": "Tool",
-    "img": "imgAddress",
     "color": "Indigo"
   },
   {
@@ -244,7 +229,6 @@
     "name": "Loyalties",
     "group": "Jacin",
     "subGroup": "Weakness",
-    "img": "imgAddress",
     "color": "Indigo"
   },
   {
@@ -252,7 +236,6 @@
     "name": "Uniform",
     "group": "Jacin",
     "subGroup": "Trait",
-    "img": "imgAddress",
     "color": "Indigo"
   },
   {
@@ -260,7 +243,6 @@
     "name": "Sidekick",
     "group": "Iko",
     "subGroup": "Power",
-    "img": "imgAddress",
     "color": "DarkTurquoise"
   },
   {
@@ -268,7 +250,6 @@
     "name": "Android",
     "group": "Iko",
     "subGroup": "Tool",
-    "img": "imgAddress",
     "color": "DarkTurquoise"
   },
   {
@@ -276,15 +257,13 @@
     "name": "Synthetic Tissue",
     "group": "Iko",
     "subGroup": "Weakness",
-    "img": "imgAddress",
     "color": "DarkTurquoise"
   },
   {
     "id": "9-4",
-    "name": "Blue Braided Hair",
+    "name": "Blue Braids",
     "group": "Iko",
     "subGroup": "Trait",
-    "img": "imgAddress",
     "color": "DarkTurquoise"
   },
   {
@@ -292,31 +271,27 @@
     "name": "Lunar Gift",
     "group": "Lavana",
     "subGroup": "Power",
-    "img": "imgAddress",
-    "color": "DarkTurquoise"
+    "color": "DarkSeaGreen"
   },
   {
     "id": "10-2",
     "name": "Queen",
     "group": "Lavana",
     "subGroup": "Tool",
-    "img": "imgAddress",
-    "color": "DarkTurquoise"
+    "color": "DarkSeaGreen"
   },
   {
     "id": "10-3",
     "name": "Beauty",
     "group": "Lavana",
     "subGroup": "Weakness",
-    "img": "imgAddress",
-    "color": "DarkTurquoise"
+    "color": "DarkSeaGreen"
   },
   {
     "id": "10-4",
     "name": "Control",
     "group": "Lavana",
     "subGroup": "Trait",
-    "img": "imgAddress",
-    "color": "DarkTurquoise"
+    "color": "DarkSeaGreen"
   }
 ]

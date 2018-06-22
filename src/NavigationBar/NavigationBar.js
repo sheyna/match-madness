@@ -16,7 +16,6 @@ class NavigationBar extends Component {
 
     componentDidMount() {
         auth.onAuthStateChanged((user) => {
-            console.log(user);
             this.setState(() => {
                 return { isLoggedIn: user ? true : false };
                 // can remove the ternary and just say "!!user"
