@@ -17,52 +17,60 @@ class GameBoard extends Component {
         };
     }
 
+    getCount = () => {
+        return this.state.setOfFour.length;
+    }
+
     addToFlippedCount = (cardData) => {
-        let num = this.getCount();
+        let num = this.getCount(); // gets length of this.state.setOfFour
         if (num < 4) {
             this.setState((prevState, props) => {
                 const updatedSetOfFour = prevState.setOfFour;
                 updatedSetOfFour.push(cardData);
                 return {
                     setOfFour: updatedSetOfFour
-                };
+                }; // this.callback is running even though the setState here hasn't finished updating to add the 4th item to setOfFour
             }, this.callback(num));
         }
     };
 
     callback = (num) => {
-        if (num + 1 === 4) {
-            setTimeout(this.scoreCards(), 100000);
+        // // The below still comes back as 3, even when it should be 4:
+        // let len = this.getCount();
+        // if (len === 4) {
+
+        if (num + 1 === 4) {  // this hack forces the setTimout to fire (it doesn't fire without it):
+            setTimeout(this.scoreCards(), 100000); // hack to give State longer to update, it doesn't work
         }
     }
 
     scoreCards = () => {
         let points = 0;
-        const compare = this.state.setOfFour;
+        const compare = this.state.setOfFour; // I'm only getting the first 3 cards in this, when there should be 4.
+
         let groups = [];
         for (let v = 0; v < compare.length; v++) {
             groups.push(compare[v].group);
         }
-        // let subGroups = []
-        // for (let v = 0; v < compare.length; v++) {
-        //     subGroups.push(compare[v].subGroup);
-        // }
+        console.log(groups); // Only outputs 3 items
+
         const groupNames = ["Cinder", "Kai", "Scarlet", "Wolf", "Cress", "Thorne", "Winter", "Jacin", "Iko", "Lavana"];
-        // const subGroupNames = ["Power", "Tool", "Weakness", "Trait"];
-
-        const test = ["Cress", "Cinder", "Cress", "Thorne"];
-        console.log(this.findIt(test, groupNames[4]));
-
-        console.log(groups);
         for (let i = 0; i < groupNames.length; i++) {
             let needle = groupNames[i];
             let scorePoints = this.findIt(groups, needle);
             console.log(groupNames[i] + ": " + scorePoints);
             points = points + scorePoints;
         }
+
+        // let subGroups = []
+        // for (let v = 0; v < compare.length; v++) {
+        //     subGroups.push(compare[v].subGroup);
+        // }
+        // const subGroupNames = ["Power", "Tool", "Weakness", "Trait"];
         // for (let i = 0; i < subGroupNames.length; i++) {
         //     points += this.findIt(groups, subGroups[i]);
         // }
+
         console.log(points);
         this.setState((prevState, props) => {
             const oldTotalPoints = prevState.totalPoints;
@@ -102,10 +110,6 @@ class GameBoard extends Component {
         }
     }
 
-    getCount = () => {
-        return this.state.setOfFour.length;
-    }
-
     componentDidMount() {
         if (!auth.currentUser) {
             alert("You must be logged in");
@@ -132,27 +136,6 @@ class GameBoard extends Component {
             this.setState({cards: snapshot.val()});
         })
     }
-
-    // onInputChange = (e) => {
-    //     e.preventDefault();
-    //     const newValue = e.target.value;
-    //     this.setState(() => {
-    //         return {
-    //             entryInput: newValue
-    //         };
-    //     })
-    // }
-
-    // addEntry = (e) => {
-    //     e.preventDefault();
-    //     database.ref(`/users/${auth.currentUser.uid}`)
-    //         .push(this.state.entryInput);
-    //     this.setState(() => {
-    //         return {
-    //             entryInput: ''
-    //         };
-    //     })
-    // }
 
     shuffle = (arr) => {
         let radix = 10;
