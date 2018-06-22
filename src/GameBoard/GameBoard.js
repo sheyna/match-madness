@@ -7,6 +7,15 @@ import GameCard from '../GameCard/GameCard.js'
 const auth = firebase.auth();
 const database = firebase.database().ref("/");
 
+
+function shuffle(arr) {
+    let radix = 10;
+    for(let j, x, i = arr.length; i; j = parseInt(Math.random() * i, radix), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+    return arr;
+};
+
+const cardsShuf = shuffle(cards);
+
 class GameBoard extends Component {
     constructor(props) {
         super(props);
@@ -57,9 +66,24 @@ class GameBoard extends Component {
         const groupNames = ["Cinder", "Kai", "Scarlet", "Wolf", "Cress", "Thorne", "Winter", "Jacin", "Iko", "Lavana"];
         for (let i = 0; i < groupNames.length; i++) {
             let needle = groupNames[i];
-            let scorePoints = this.findIt(groups, needle);
+            let scorePoints = this.findIt(groups, needle, i);
             console.log(groupNames[i] + ": " + scorePoints);
-            points = points + scorePoints;
+            points = points + scorePoints[0];
+
+            // // highlight matches
+            // if (scorePoints > 1) {
+            //     let index1 = this.returnNthIndexOf(groups, groupNames[i], 1);
+            //     let index2 = this.returnNthIndexOf(groups, groupNames[i], 2);
+            //     document.getElementById(compare)
+            //     document.getElementById(compare[i])
+            //     if (scorePoints[0] > 5) {
+            //         let index3 = this.returnNthIndexOf(groups, groupNames[i], 3);
+            //         if (scorePoints[0] > 5) {
+            //             let index4 = this.returnNthIndexOf(groups, groupNames[i], 4);
+            //         }
+            //     }
+            // }
+
         }
 
         // let subGroups = []
@@ -81,15 +105,15 @@ class GameBoard extends Component {
         });
     }
 
-    findIt = (haystackArray, needle) => {
+    findIt = (haystackArray, needle, i) => {
         if (this.nthIndexOf(haystackArray, needle, 4)) {
-            return 10;
+            return 10, i;
         } else if (this.nthIndexOf(haystackArray, needle, 3)) {
-            return 6;
+            return 6, i;
         } else if (this.nthIndexOf(haystackArray, needle, 2)) {
-            return 2;
+            return 2, i;
         } else {
-            return 0;
+            return 0, 0;
         }
     }
 
@@ -102,13 +126,24 @@ class GameBoard extends Component {
         return false;
     };
 
-    shouldComponentUpdate(nextProps, nextState) {
-        if (this.state.setOfFour !== nextState.setOfFour) {
-          return false;
-        } else {
-            return false;
+    returnNthIndexOf = (arrr, e, n) => {
+        var index = -1;
+        for (let i = 0, len = arrr.length; i < len; i++) {
+            if (i in arrr && e === arrr[i] && !--n) {
+                index = i;
+                break;
+            }
         }
-    }
+        return index;
+    };
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     if (this.state.setOfFour !== nextState.setOfFour) {
+    //       return false;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
     componentDidMount() {
         if (!auth.currentUser) {
@@ -137,14 +172,8 @@ class GameBoard extends Component {
         })
     }
 
-    shuffle = (arr) => {
-        let radix = 10;
-        for(let j, x, i = arr.length; i; j = parseInt(Math.random() * i, radix), x = arr[--i], arr[i] = arr[j], arr[j] = x);
-        return arr;
-    };
 
     render() {
-        const cardsShuf = this.shuffle(cards);
         return (
             <section className="game-board">
                 {cardsShuf.map((cardsShuf, idx) => {
