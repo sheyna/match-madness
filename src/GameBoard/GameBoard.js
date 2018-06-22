@@ -39,7 +39,7 @@ class GameBoard extends Component {
         // let len = this.getCount();
         // if (len === 4) {
 
-        if (num + 1 === 4) {  // this hack forces the setTimout to fire (it doesn't fire without it):
+        if (num + 1 === 4) {  // this num hack forces the setTimout to fire (it doesn't fire without it)
             setTimeout(this.scoreCards(), 100000); // hack to give State longer to update, it doesn't work
         }
     }
