@@ -68,7 +68,7 @@ class GameBoard extends Component {
             let needle = groupNames[i];
             let scorePoints = this.findIt(groups, needle, i);
             console.log(groupNames[i] + ": " + scorePoints);
-            points = points + scorePoints[0];
+            points = points + scorePoints;
 
             // // highlight matches
             // if (scorePoints > 1) {
