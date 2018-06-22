@@ -103,6 +103,7 @@ class GameBoard extends Component {
                 totalPoints: newTotalPoints
             };
         });
+        console.log(this.state.setOfFour);
     }
 
     findIt = (haystackArray, needle, i) => {
