@@ -31,42 +31,43 @@ class GameBoard extends Component {
     }
 
     addToFlippedCount = (cardData) => {
-        let num = this.getCount(); // gets length of this.state.setOfFour
+        let num = this.getCount();
         if (num < 4) {
             this.setState((prevState, props) => {
-                const updatedSetOfFour = prevState.setOfFour;
+                let updatedSetOfFour = prevState.setOfFour;
                 updatedSetOfFour.push(cardData);
                 return {
                     setOfFour: updatedSetOfFour
-                }; // this.callback is running even though the setState here hasn't finished updating to add the 4th item to setOfFour
-            }, this.callback(num));
+                };
+            }, this.checkIfTimeToScore(num));
         }
     };
 
-    callback = (num) => {
-        // // The below still comes back as 3, even when it should be 4:
-        // let len = this.getCount();
-        // if (len === 4) {
-
-        if (num + 1 === 4) {  // this num hack forces the setTimout to fire (it doesn't fire without it)
-            setTimeout(this.scoreCards(), 100000); // hack to give State longer to update, it doesn't work
+    checkIfTimeToScore = (num) => {
+        if (num + 1 === 4) {
+            setTimeout(function() { this.scoreCards(); }.bind(this), 1000);
         }
     }
 
     scoreCards = () => {
         let points = 0;
-        const compare = this.state.setOfFour; // I'm only getting the first 3 cards in this, when there should be 4.
+        const compare = this.state.setOfFour;
 
         let groups = [];
         for (let v = 0; v < compare.length; v++) {
             groups.push(compare[v].group);
         }
-        console.log(groups); // Only outputs 3 items
+        console.log(groups);
+
+        let ids = [];
+        for (let v = 0; v < compare.length; v++) {
+            groups.push(compare[v].id);
+        }
 
         const groupNames = ["Cinder", "Kai", "Scarlet", "Wolf", "Cress", "Thorne", "Winter", "Jacin", "Iko", "Lavana"];
         for (let i = 0; i < groupNames.length; i++) {
             let needle = groupNames[i];
-            let scorePoints = this.findIt(groups, needle, i);
+            let scorePoints = this.findIt(groups, needle);
             console.log(groupNames[i] + ": " + scorePoints);
             points = points + scorePoints;
 
@@ -103,18 +104,18 @@ class GameBoard extends Component {
                 totalPoints: newTotalPoints
             };
         });
-        console.log(this.state.setOfFour);
+        console.log(this.state.setOfFour)
     }
 
-    findIt = (haystackArray, needle, i) => {
+    findIt = (haystackArray, needle) => {
         if (this.nthIndexOf(haystackArray, needle, 4)) {
-            return 10, i;
+            return 10;
         } else if (this.nthIndexOf(haystackArray, needle, 3)) {
-            return 6, i;
+            return 6;
         } else if (this.nthIndexOf(haystackArray, needle, 2)) {
-            return 2, i;
+            return 2;
         } else {
-            return 0, 0;
+            return 0;
         }
     }
 
@@ -137,14 +138,6 @@ class GameBoard extends Component {
         }
         return index;
     };
-
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     if (this.state.setOfFour !== nextState.setOfFour) {
-    //       return false;
-    //     } else {
-    //         return false;
-    //     }
-    // }
 
     componentDidMount() {
         if (!auth.currentUser) {
