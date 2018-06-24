@@ -110,6 +110,8 @@ class GameBoard extends Component {
         for (let g = 0; g < compare.length; g++) {
             ids.push(compare[g].id);
         }
+
+        let idsOfMatches = [];
         let dudIds = [];
 
         const groupNames = ["Cinder", "Kai", "Scarlet", "Wolf", "Cress", "Thorne", "Winter", "Jacin", "Iko", "Lavana"];
@@ -120,7 +122,6 @@ class GameBoard extends Component {
 
             if (scorePoints > 1) {
                 let times;
-                let idsOfMatches = [];
                 if (scorePoints === 10) {
                     times = 4;
                 } else if (scorePoints === 6) {
@@ -138,6 +139,13 @@ class GameBoard extends Component {
             }
         }
 
+        for (let b = 0; b < ids.length; b++) {
+            if (this.nthIndexOf(idsOfMatches, ids[b], 1) === false) {
+                dudIds.push(ids[b]);
+            }
+        }
+         setTimeout(function() { this.restoreFlippedDuds(dudIds); }.bind(this), 1000);
+
         console.log(points);
         this.setState((prevState, props) => {
             const oldTotalPoints = prevState.totalPoints;
@@ -149,6 +157,12 @@ class GameBoard extends Component {
         });
         console.log(this.state.totalPoints);
 
+    };
+
+    restoreFlippedDuds = (dudIds) => {
+        for (let a = 0; a < dudIds.length; a++) {
+            this.updateFlipped(dudIds[a], false);
+        }
     };
 
     findIt = (haystackArray, needle) => {
@@ -213,12 +227,15 @@ class GameBoard extends Component {
 
     render() {
         return (
-            <section className="game-board">
-                {cardsShuf.map((cardsShuf, idx) => {
-                    let cardId = cardsShuf.id;
-                    return <GameCard key={idx} card={cardsShuf} isFlipped={this.state[cardId]} addToFlippedCount={this.addToFlippedCount.bind(this)} getCount={this.getCount} updateFlipped={this.updateFlipped}/>;
-                })}
-            </section>
+            <main>
+                <div className="score">{this.state.totalPoints}</div>
+                <section className="game-board">
+                    {cardsShuf.map((cardsShuf, idx) => {
+                        let cardId = cardsShuf.id;
+                        return <GameCard key={idx} card={cardsShuf} isFlipped={this.state[cardId]} addToFlippedCount={this.addToFlippedCount.bind(this)} getCount={this.getCount} updateFlipped={this.updateFlipped}/>;
+                    })}
+                </section>
+            </main>
         );
     };
 };
