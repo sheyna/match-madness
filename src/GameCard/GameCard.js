@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import './GameCard.css';
-// import {
-//   Link
-// } from "react-router-dom";
 // import PropTypes from 'prop-types';
 
 class GameCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      flipped: -2,
-      value: {}
-    }
-  }
 
   addToCount = (cardInst) => {
     this.props.addToFlippedCount(cardInst);
@@ -21,29 +11,43 @@ class GameCard extends Component {
   flipCard = (e, cardInstance) => {
     let count = this.props.getCount();
     if (count < 4) {
-      this.setState({flipped: 0});
+      this.props.updateFlipped(cardInstance.id, true);
       count = count + 1;
       this.addToCount(cardInstance, count);
+
     }
   }
 
   render() {
     const cardInstance = this.props.card;
-    //this.setState({value: cardInstance});
-    const cardBackground = {
+    const idCard = this.props.id;
+    let zIndexStatus;
+    let cursorStatus;
+    if (this.props.isFlipped === true) {
+      zIndexStatus = 0;
+      cursorStatus = "default";
+    } else {
+      zIndexStatus = -2;
+      cursorStatus = "pointer";
+    }
+
+    let valueStyles = {
         backgroundColor: cardInstance.color,
-        zIndex: this.state.flipped,
+        zIndex: zIndexStatus
     };
+    let gameCardStyles = {
+        cursor: cursorStatus
+    };
+    let valueId = "value-" + idCard;
 
     return (
-      <section className="game-card" id={cardInstance.id} onClick={((e) => this.flipCard(e, cardInstance))}>
-        <div className="value" style={cardBackground}>
+      <section className="game-card" id={cardInstance.id} style={gameCardStyles} onClick={((e) => this.flipCard(e, cardInstance))}>
+        <div className="value" id={valueId} style={valueStyles}>
           <h2><span>{cardInstance.name}</span></h2>
           <h1>{cardInstance.group}</h1>
           <p>Class: {cardInstance.subGroup}</p>
         </div>
       </section>
-
     )
   }
 }

@@ -1,9 +1,23 @@
-.game-card {
+.game-card,
+.blank {
   width: 18%;
   margin: 1%;
   position: relative;
+}
+
+.game-card {
   border: 3px solid Silver;
   background-color: Silver;
+}
+
+.blank .value {
+  z-index: -2 !important;
+  display: none;
+  cursor: default !important;
+}
+
+.blank {
+  background-color: WhiteSmoke;
 }
 
 .game-card .value {

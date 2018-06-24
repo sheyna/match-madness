@@ -1,6 +1,6 @@
 [
   {
-    "id": "1-1",
+    "id": "id0101",
     "name": "Mechanic",
     "group": "Cinder",
     "subGroup": "Power",
@@ -8,7 +8,7 @@
     "color": "Goldenrod"
   },
   {
-    "id": "1-2",
+    "id": "id0102",
     "name": "Cyborg",
     "group": "Cinder",
     "subGroup": "Tool",
@@ -16,7 +16,7 @@
     "color": "Goldenrod"
   },
   {
-    "id": "1-3",
+    "id": "id0103",
     "name": "Gloves",
     "group": "Cinder",
     "subGroup": "Weakness",
@@ -24,7 +24,7 @@
     "color": "Goldenrod"
   },
   {
-    "id": "1-14",
+    "id": "id01014",
     "name": "Foot",
     "group": "Cinder",
     "subGroup": "Trait",
@@ -32,7 +32,7 @@
     "color": "Goldenrod"
   },
   {
-    "id": "2-1",
+    "id": "id0201",
     "name": "Negotiator",
     "group": "Kai",
     "subGroup": "Power",
@@ -40,7 +40,7 @@
     "color": "#c41342"
   },
   {
-    "id": "2-2",
+    "id": "id0202",
     "name": "Emporer",
     "group": "Kai",
     "subGroup": "Tool",
@@ -48,7 +48,7 @@
     "color": "#c41342"
   },
   {
-    "id": "2-3",
+    "id": "id0203",
     "name": "Appeaser",
     "group": "Kai",
     "subGroup": "Weakness",
@@ -56,7 +56,7 @@
     "color": "#c41342"
   },
   {
-    "id": "2-4",
+    "id": "id0204",
     "name": "Teen Idol",
     "group": "Kai",
     "subGroup": "Trait",
@@ -64,7 +64,7 @@
     "color": "#c41342"
   },
   {
-    "id": "3-1",
+    "id": "id0301",
     "name": "Pilot",
     "group": "Scarlet",
     "subGroup": "Power",
@@ -72,7 +72,7 @@
     "color": "OrangeRed"
   },
   {
-    "id": "3-2",
+    "id": "id0302",
     "name": "Hoodie",
     "group": "Scarlet",
     "subGroup": "Tool",
@@ -80,7 +80,7 @@
     "color": "OrangeRed"
   },
   {
-    "id": "3-3",
+    "id": "id0303",
     "name": "Gun",
     "group": "Scarlet",
     "subGroup": "Weakness",
@@ -88,7 +88,7 @@
     "color": "OrangeRed"
   },
   {
-    "id": "3-4",
+    "id": "id0304",
     "name": "Red Hair",
     "group": "Scarlet",
     "subGroup": "Trait",
@@ -96,7 +96,7 @@
     "color": "OrangeRed"
   },
   {
-    "id": "4-1",
+    "id": "id0401",
     "name": "Street Fighter",
     "group": "Wolf",
     "subGroup": "Power",
@@ -104,7 +104,7 @@
     "color": "Gray"
   },
   {
-    "id": "4-2",
+    "id": "id0402",
     "name": "Teeth",
     "group": "Wolf",
     "subGroup": "Tool",
@@ -112,7 +112,7 @@
     "color": "Gray"
   },
   {
-    "id": "4-3",
+    "id": "id0403",
     "name": "Tomatoes",
     "group": "Wolf",
     "subGroup": "Weakness",
@@ -120,175 +120,175 @@
     "color": "Gray"
   },
   {
-    "id": "4-4",
+    "id": "id0404",
     "name": "Tattoo",
     "group": "Wolf",
     "subGroup": "Trait",
     "color": "Gray"
   },
   {
-    "id": "5-1",
+    "id": "id0501",
     "name": "Hacker",
     "group": "Cress",
     "subGroup": "Power",
     "color": "LightCoral"
   },
   {
-    "id": "5-2",
+    "id": "id0502",
     "name": "Port Screen",
     "group": "Cress",
     "subGroup": "Tool",
     "color": "LightCoral"
   },
   {
-    "id": "5-3",
+    "id": "id0503",
     "name": "Satellite",
     "group": "Cress",
     "subGroup": "Weakness",
     "color": "LightCoral"
   },
   {
-    "id": "5-4",
+    "id": "id0504",
     "name": "Long Hair",
     "group": "Cress",
     "subGroup": "Trait",
     "color": "LightCoral"
   },
   {
-    "id": "6-1",
+    "id": "id0601",
     "name": "Pilot",
     "group": "Thorne",
     "subGroup": "Power",
     "color": "Navy"
   },
   {
-    "id": "6-2",
+    "id": "id0602",
     "name": "Rampion",
     "group": "Thorne",
     "subGroup": "Tool",
     "color": "Navy"
   },
   {
-    "id": "6-3",
+    "id": "id0603",
     "name": "Fun",
     "group": "Thorne",
     "subGroup": "Weakness",
     "color": "Navy"
   },
   {
-    "id": "6-4",
+    "id": "id0604",
     "name": "Grin",
     "group": "Thorne",
     "subGroup": "Trait",
     "color": "Navy"
   },
   {
-    "id": "7-1",
+    "id": "id0701",
     "name": "Scar",
     "group": "Winter",
     "subGroup": "Power",
     "color": "Black"
   },
   {
-    "id": "7-2",
+    "id": "id0702",
     "name": "Princess",
     "group": "Winter",
     "subGroup": "Tool",
     "color": "Black"
   },
   {
-    "id": "7-3",
+    "id": "id0703",
     "name": "Madness",
     "group": "Winter",
     "subGroup": "Weakness",
     "color": "Black"
   },
   {
-    "id": "7-4",
+    "id": "id0704",
     "name": "Beauty",
     "group": "Winter",
     "subGroup": "Trait",
     "color": "Black"
   },
   {
-    "id": "8-1",
+    "id": "id0801",
     "name": "Protector",
     "group": "Jacin",
     "subGroup": "Power",
     "color": "Indigo"
   },
   {
-    "id": "8-2",
+    "id": "id0802",
     "name": "Guard",
     "group": "Jacin",
     "subGroup": "Tool",
     "color": "Indigo"
   },
   {
-    "id": "8-3",
+    "id": "id0803",
     "name": "Loyalties",
     "group": "Jacin",
     "subGroup": "Weakness",
     "color": "Indigo"
   },
   {
-    "id": "8-4",
+    "id": "id0804",
     "name": "Uniform",
     "group": "Jacin",
     "subGroup": "Trait",
     "color": "Indigo"
   },
   {
-    "id": "9-1",
+    "id": "id0901",
     "name": "Sidekick",
     "group": "Iko",
     "subGroup": "Power",
     "color": "DarkTurquoise"
   },
   {
-    "id": "9-2",
+    "id": "id0902",
     "name": "Android",
     "group": "Iko",
     "subGroup": "Tool",
     "color": "DarkTurquoise"
   },
   {
-    "id": "9-3",
+    "id": "id0903",
     "name": "Synthetic Tissue",
     "group": "Iko",
     "subGroup": "Weakness",
     "color": "DarkTurquoise"
   },
   {
-    "id": "9-4",
+    "id": "id0904",
     "name": "Blue Braids",
     "group": "Iko",
     "subGroup": "Trait",
     "color": "DarkTurquoise"
   },
   {
-    "id": "10-1",
+    "id": "id1001",
     "name": "Lunar Gift",
     "group": "Lavana",
     "subGroup": "Power",
     "color": "DarkSeaGreen"
   },
   {
-    "id": "10-2",
+    "id": "id1002",
     "name": "Queen",
     "group": "Lavana",
     "subGroup": "Tool",
     "color": "DarkSeaGreen"
   },
   {
-    "id": "10-3",
+    "id": "id1003",
     "name": "Beauty",
     "group": "Lavana",
     "subGroup": "Weakness",
     "color": "DarkSeaGreen"
   },
   {
-    "id": "10-4",
+    "id": "id1004",
     "name": "Control",
     "group": "Lavana",
     "subGroup": "Trait",
