@@ -2,7 +2,7 @@
   "name": "match-madness",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://matchmadness-38d48.firebaseio.com/",
+  "homepage": "https://matchmadness-38d48.firebaseapp.com/",
   "dependencies": {
     "firebase": "^5.0.4",
     "react": "^16.4.0",
