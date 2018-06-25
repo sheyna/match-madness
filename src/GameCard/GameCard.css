@@ -18,11 +18,12 @@
 .blank .value {
   z-index: -2 !important;
   display: none;
-  cursor: default !important;
+  pointer-events: none !important;
 }
 
 .blank {
   background-color: Silver;
+  pointer-events: none !important;
 }
 
 .game-card .value {
