@@ -42,3 +42,10 @@ main {
     padding: 2rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .instructions {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+}
