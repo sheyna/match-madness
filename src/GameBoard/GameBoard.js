@@ -244,6 +244,7 @@ class GameBoard extends Component {
         return (
             <main>
                 <div className="score">Score: <span>{this.state.totalPoints}</span></div>
+                <p className="instructions"><span>Select 4 cards,</span> if all 4 match you get 10 points. If you get 3 matches you get 6 points. 2 matches gives you 2 points. See how high you can score.</p>
                 <section className="game-board">
                     {cardsShuf.map((cardsShuf, idx) => {
                         let cardId = cardsShuf.id;
