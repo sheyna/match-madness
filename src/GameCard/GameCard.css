@@ -3,7 +3,7 @@
   width: 18%;
   margin: 1%;
   position: relative;
-  height: 4.8rem;
+  height: 6rem;
 }
 
 .game-card {
@@ -11,8 +11,8 @@
   background-color: Silver;
   background-image: url("/nebula.png");
   background-repeat: no-repeat;
-  background-position: 25% 10%;
-  background-size: 110% auto;
+  background-position: 0% 0%;
+  background-size: cover;
 }
 
 .blank .value {
@@ -34,7 +34,7 @@
 .game-card h1 {
   font-family: "Tulpen One", serif;
   color: white;
-  padding: .5rem 0 .1rem .5rem;
+  padding: 1.5rem 0 .1rem .5rem;
   font-size: 2.2rem;
 }
 
@@ -44,13 +44,14 @@
 }
 
 .game-card h2 {
-  font-size: .6rem;
+  font-size: .5rem;
   background-color: Gainsboro;
   position: absolute;
   top: 0;
   right: 0;
-  padding: .3rem;
+  padding: .3rem 0 .3rem 0;
   height: 1.2rem;
+  text-align: right;
 }
 
 .game-card h2 span {
@@ -76,4 +77,24 @@
   font-size: .6rem;
   color: white;
   margin: 0 0 .6rem .6rem;
+}
+
+@media screen and (min-width: 640px) {
+  .game-card h1 {
+    padding: .5rem 0 .1rem .5rem;
+  }
+  .game-card,
+  .blank {
+    height: 4.8rem;
+  }
+  .game-card h2 {
+    font-size: .6rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .game-card {
+    background-position: 25% 10%;
+    background-size: 110% auto;
+  }
 }

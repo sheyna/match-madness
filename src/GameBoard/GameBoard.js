@@ -231,6 +231,7 @@ class GameBoard extends Component {
             // for (let property1 in object1) {
             //     arrayFilter.push(object1[property1]);
             // }
+            console.log(snapshot.val());
             this.setState(() => {
                 return {cards: snapshot.val() || []};
                 // return {cards: arrayFilter || [] };

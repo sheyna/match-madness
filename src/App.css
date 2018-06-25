@@ -87,11 +87,13 @@ body {
   background-color: Silver;
   background-image: url("/hero.jpg");
   background-repeat: no-repeat;
-  background-position: top;
-  background-size: 100% auto;
+  background-position: top right;
+  background-size: cover;
 }
 
-.home-page {
-  padding-bottom: 4rem;
-  background-color: Gainsboro;
+@media screen and (min-width: 768px) {
+  .home-page div {
+    background-position: top;
+    background-size: 100% auto;
+  }
 }

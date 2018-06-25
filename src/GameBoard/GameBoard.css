@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
   justify-content: space-between;
   align-content: space-between;
   max-width: 1024px;
@@ -25,4 +25,10 @@
 main {
   background-color: Silver;
   margin-top: 0;
+}
+
+@media screen and (min-width: 640px) {
+  .game-board {
+    padding: 2rem;
+  }
 }
