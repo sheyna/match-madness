@@ -57,8 +57,41 @@ table {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Actor', sans-serif;
 }
 
 body {
   background-color: WhiteSmoke;
+}
+
+/* HOME PAGE */
+
+.home-page a {
+  text-decoration: none;
+  font-family: "Tulpen One", serif;
+  text-align: center;
+  font-size: 8rem;
+  position: relative;
+  margin: 0 auto;
+  padding: 12rem 0;
+  display: inline-block;
+  width: 100%;
+  color: white;
+  text-shadow: 0px 0px 30px rgba(78, 78, 76, 1);
+}
+
+.home-page div {
+  width: 100%;
+  display: block;
+  position: relative;
+  background-color: Silver;
+  background-image: url("/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% auto;
+}
+
+.home-page {
+  padding-bottom: 4rem;
+  background-color: Gainsboro;
 }

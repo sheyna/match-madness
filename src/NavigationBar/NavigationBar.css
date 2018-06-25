@@ -1,8 +1,34 @@
 .navigation-bar {
-    list-style: none;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.navigation-bar li {
-    display: inline;
-    padding: 0 1em;
+.navigation-bar h1 {
+  font-family: "Tulpen One", serif;
+  font-size: 3rem;
+  color: #000040;
+}
+
+.navigation-bar a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
+.navigation-bar ul li {
+  display: inline;
+  padding: 0 1em;
+  font-family: 'Actor', sans-serif;
+}
+
+.navigation-bar ul li a {
+  text-decoration: none;
+  color: #000040;
 }

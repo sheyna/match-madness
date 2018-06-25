@@ -65,6 +65,7 @@ class GameBoard extends Component {
         };
     };
 
+    // set flipped status in state of individual cards, from card's id:
     updateFlipped = (id, flippedIt) => {
         var stateObject = function() {
             let returnObj = {};
@@ -74,10 +75,12 @@ class GameBoard extends Component {
         this.setState( stateObject );
     };
 
+    // get how many cards are in setOfFour state:
     getCount = () => {
         return this.state.setOfFour.length;
     };
 
+    // Add flipped card data to setOfFour in state:
     addToFlippedCount = (cardData) => {
         let num = this.getCount();
         if (num < 4) {
@@ -91,6 +94,7 @@ class GameBoard extends Component {
         }
     };
 
+    // confirm 4 cards have been selected:
     checkIfTimeToScore = (num) => {
         if (num + 1 === 4) {
             setTimeout(function() { this.scoreCards(); }.bind(this), 1000);
@@ -114,6 +118,7 @@ class GameBoard extends Component {
         let idsOfMatches = [];
         let dudIds = [];
 
+        // find matches and remove them from board:
         const groupNames = ["Cinder", "Kai", "Scarlet", "Wolf", "Cress", "Thorne", "Winter", "Jacin", "Iko", "Lavana"];
         for (let i = 0; i < groupNames.length; i++) {
             let needle = groupNames[i];
@@ -129,24 +134,19 @@ class GameBoard extends Component {
                 } else if (scorePoints === 2) {
                     times = 2;
                 }
+                // collect ids of matched cards in an array:
                 for (let k = 1; k <= times; k++) {
                     let m = this.returnNthIndexOf(groups, groupNames[i], k);
                     idsOfMatches.push(ids[m]);
                 }
+                // remove matches from board:
                 for (let z = 0; z < idsOfMatches.length; z++) {
                     this.removeReplaceCard(idsOfMatches[z]);
                 }
             }
         }
 
-        for (let b = 0; b < ids.length; b++) {
-            if (this.nthIndexOf(idsOfMatches, ids[b], 1) === false) {
-                dudIds.push(ids[b]);
-            }
-        }
-         setTimeout(function() { this.restoreFlippedDuds(dudIds); }.bind(this), 1000);
-
-        console.log(points);
+        // update user total score in state:
         this.setState((prevState, props) => {
             const oldTotalPoints = prevState.totalPoints;
             const newTotalPoints = oldTotalPoints + points;
@@ -155,16 +155,24 @@ class GameBoard extends Component {
                 setOfFour: []
             };
         });
-        console.log(this.state.totalPoints);
 
+        // get cards that didn't have matches and flip them over (face down):
+        for (let b = 0; b < ids.length; b++) {
+            if (this.nthIndexOf(idsOfMatches, ids[b], 1) === false) {
+                dudIds.push(ids[b]);
+            }
+        }
+         setTimeout(function() { this.restoreFlippedDuds(dudIds); }.bind(this), 1000);
     };
 
+    // flip down a non-matching card:
     restoreFlippedDuds = (dudIds) => {
         for (let a = 0; a < dudIds.length; a++) {
             this.updateFlipped(dudIds[a], false);
         }
     };
 
+    // take a name see if multiple up turned cards match it:
     findIt = (haystackArray, needle) => {
         if (this.nthIndexOf(haystackArray, needle, 4)) {
             return 10;
@@ -177,15 +185,21 @@ class GameBoard extends Component {
         }
     };
 
+    // These two functions do practically the same thing.
+    // They find out if a value is in an array multiple times
+    // The n is the "nth" occurrence
+
+    // 1.) This returns a boolen value
     nthIndexOf = (arrr, e, n) => {
-        for (let i = 0, len = arrr.length; i < len; i++) {
-            if (i in arrr && e === arrr[i] && !--n) {
-                return true;
-            }
+        const index = this.returnNthIndexOf(arrr, e, n);
+        if (index !== -1) {
+            return true;
+        } else {
+            return false;
         }
-        return false;
     };
 
+    // 2.) This returns the index of the nth match
     returnNthIndexOf = (arrr, e, n) => {
         let index = -1;
         for (let i = 0, len = arrr.length; i < len; i++) {
@@ -197,8 +211,9 @@ class GameBoard extends Component {
         return index;
     };
 
+    // remove (or rather hide) cards that have been matched:
     removeReplaceCard = (idToRemove) => {
-        // find real react way to do this:
+        // update this to use state:
         document.getElementById(idToRemove).classList.add('blank');
         document.getElementById(idToRemove).classList.remove('game-card');
     };
@@ -211,15 +226,14 @@ class GameBoard extends Component {
         }
         // This does not work yet. Appears to be problem with retrieving array-like data from firebase.
         database.on('value', (snapshot) => {
-            const object1 = snapshot.val();
-            let arrayFilter = [];
-            for (let property1 in object1) {
-                arrayFilter.push(object1[property1]);
-            }
-            // this.setState({cards: arrayFilter});
+            // const object1 = snapshot.val();
+            // let arrayFilter = [];
+            // for (let property1 in object1) {
+            //     arrayFilter.push(object1[property1]);
+            // }
             this.setState(() => {
-                // return {cards: snapshot.val() || []};
-                return {cards: arrayFilter || [] };
+                return {cards: snapshot.val() || []};
+                // return {cards: arrayFilter || [] };
             });
         })
     };
@@ -228,7 +242,7 @@ class GameBoard extends Component {
     render() {
         return (
             <main>
-                <div className="score">{this.state.totalPoints}</div>
+                <div className="score">Score: <span>{this.state.totalPoints}</span></div>
                 <section className="game-board">
                     {cardsShuf.map((cardsShuf, idx) => {
                         let cardId = cardsShuf.id;

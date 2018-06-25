@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 class HomePage extends Component {
     render() {
         return (
-            <div>
-                <h1>Match Madness</h1>
+            <section className="home-page">
+              <div>
                 <Link to="/game">Play Game</Link>
-            </div>
+              </div>
+            </section>
         );
     }
 }

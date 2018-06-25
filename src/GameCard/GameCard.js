@@ -4,23 +4,22 @@ import './GameCard.css';
 
 class GameCard extends Component {
 
-  addToCount = (cardInst) => {
-    this.props.addToFlippedCount(cardInst);
-  }
-
+  // If less than 4 in setOfFour, flip card, record in setOfFour state:
   flipCard = (e, cardInstance) => {
     let count = this.props.getCount();
     if (count < 4) {
       this.props.updateFlipped(cardInstance.id, true);
       count = count + 1;
-      this.addToCount(cardInstance, count);
-
+      this.props.addToFlippedCount(cardInstance);
     }
   }
 
   render() {
     const cardInstance = this.props.card;
     const idCard = this.props.id;
+    let valueId = "value-" + idCard;
+
+    // set style variables:
     let zIndexStatus;
     let cursorStatus;
     if (this.props.isFlipped === true) {
@@ -31,6 +30,7 @@ class GameCard extends Component {
       cursorStatus = "pointer";
     }
 
+    // set inline styles:
     let valueStyles = {
         backgroundColor: cardInstance.color,
         zIndex: zIndexStatus
@@ -38,7 +38,6 @@ class GameCard extends Component {
     let gameCardStyles = {
         cursor: cursorStatus
     };
-    let valueId = "value-" + idCard;
 
     return (
       <section className="game-card" id={cardInstance.id} style={gameCardStyles} onClick={((e) => this.flipCard(e, cardInstance))}>

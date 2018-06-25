@@ -1,8 +1,28 @@
 .game-board {
   display: flex;
   flex-wrap: wrap;
-  margin: 2rem auto;
+  margin: 0 auto;
+  padding: 2rem;
   justify-content: space-between;
   align-content: space-between;
   max-width: 1024px;
+}
+
+.score {
+  position: absolute;
+  top: 1.6rem;
+  left: 12rem;
+  padding: .5rem;
+  background-color: Gainsboro;
+}
+
+.score span {
+  font-weight: bold;
+  margin-top: -4rem;
+  position: relative;
+}
+
+main {
+  background-color: Silver;
+  margin-top: 0;
 }

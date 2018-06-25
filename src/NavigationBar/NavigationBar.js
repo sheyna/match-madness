@@ -18,7 +18,6 @@ class NavigationBar extends Component {
         auth.onAuthStateChanged((user) => {
             this.setState(() => {
                 return { isLoggedIn: user ? true : false };
-                // can remove the ternary and just say "!!user"
             });
         });
     }
@@ -33,12 +32,15 @@ class NavigationBar extends Component {
 
     render() {
         return (
-            <ul className="navigation-bar">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/game">Game</Link></li>
-                {!this.state.isLoggedIn && <li><a href="#signin" onClick={this.signIn}>Sign In</a></li>}
-                {this.state.isLoggedIn && <li><a href="#signout" onClick={this.signOut}>Sign Out</a></li>}
-            </ul>
+            <header className="navigation-bar">
+                <Link to="/"><h1>Match Madness</h1></Link>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/game">Game</Link></li>
+                    {!this.state.isLoggedIn && <li><a href="#signin" onClick={this.signIn}>Sign In</a></li>}
+                    {this.state.isLoggedIn && <li><a href="#signout" onClick={this.signOut}>Sign Out</a></li>}
+                </ul>
+            </header>
         );
     }
 }
