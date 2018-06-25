@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import './GameBoard.css';
-import cards from '../cards.json';
 import GameCard from '../GameCard/GameCard.js'
 
 const auth = firebase.auth();
@@ -13,14 +12,12 @@ function shuffle(arr) {
     return arr;
 };
 
-const cardsShuf = shuffle(cards);
-
 class GameBoard extends Component {
     constructor(props) {
         super(props);
         this.state = {
             setOfFour: [],
-            cards: {},
+            cards: [],
             totalPoints: 0,
             id0101 : false,
             id0102 : false,
@@ -213,7 +210,7 @@ class GameBoard extends Component {
 
     // remove (or rather hide) cards that have been matched:
     removeReplaceCard = (idToRemove) => {
-        // update this to use state:
+        // TO DO: update this to use state:
         document.getElementById(idToRemove).classList.add('blank');
         document.getElementById(idToRemove).classList.remove('game-card');
     };
@@ -224,31 +221,25 @@ class GameBoard extends Component {
             // redirect:
             return this.props.history.push('/');
         }
-        // This does not work yet. Appears to be problem with retrieving array-like data from firebase.
         database.on('value', (snapshot) => {
-            // const object1 = snapshot.val();
-            // let arrayFilter = [];
-            // for (let property1 in object1) {
-            //     arrayFilter.push(object1[property1]);
-            // }
-            console.log(snapshot.val());
+            const cardsShuf = shuffle(snapshot.val());
             this.setState(() => {
-                return {cards: snapshot.val() || []};
-                // return {cards: arrayFilter || [] };
+                return {cards: cardsShuf || []};
             });
         })
     };
 
 
     render() {
+        const cardsFromState = this.state.cards;
         return (
             <main>
                 <div className="score">Score: <span>{this.state.totalPoints}</span></div>
                 <p className="instructions"><span>Select 4 cards,</span> if all 4 match you get 10 points. If you get 3 matches you get 6 points. 2 matches gives you 2 points. See how high you can score.</p>
                 <section className="game-board">
-                    {cardsShuf.map((cardsShuf, idx) => {
-                        let cardId = cardsShuf.id;
-                        return <GameCard key={idx} card={cardsShuf} isFlipped={this.state[cardId]} addToFlippedCount={this.addToFlippedCount.bind(this)} getCount={this.getCount} updateFlipped={this.updateFlipped}/>;
+                    {cardsFromState.map((cardsFromState, idx) => {
+                        let cardId = cardsFromState.id;
+                        return <GameCard key={idx} card={cardsFromState} isFlipped={this.state[cardId]} addToFlippedCount={this.addToFlippedCount.bind(this)} getCount={this.getCount} updateFlipped={this.updateFlipped}/>;
                     })}
                 </section>
             </main>

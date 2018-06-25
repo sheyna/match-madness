@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './GameCard.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class GameCard extends Component {
 
@@ -50,5 +50,19 @@ class GameCard extends Component {
     )
   }
 }
+
+GameCard.propTypes = {
+  card: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    group: PropTypes.string.isRequired,
+    subGroup: PropTypes.string,
+    color: PropTypes.string
+  }),
+  isFlipped: PropTypes.bool,
+  addToFlippedCount: PropTypes.func,
+  getCount: PropTypes.func,
+  updateFlipped: PropTypes.func
+};
 
 export default GameCard;
