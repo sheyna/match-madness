@@ -22,12 +22,15 @@ class GameCard extends Component {
     // set style variables:
     let zIndexStatus;
     let cursorStatus;
+    let pointerEvents;
     if (this.props.isFlipped === true) {
       zIndexStatus = 0;
       cursorStatus = "default";
+      pointerEvents = "none";
     } else {
       zIndexStatus = -2;
       cursorStatus = "pointer";
+      pointerEvents = "auto";
     }
 
     // set inline styles:
@@ -36,7 +39,8 @@ class GameCard extends Component {
         zIndex: zIndexStatus
     };
     let gameCardStyles = {
-        cursor: cursorStatus
+        cursor: cursorStatus,
+        pointerEvents: pointerEvents
     };
 
     return (
